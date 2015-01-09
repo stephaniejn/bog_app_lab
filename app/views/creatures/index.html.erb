@@ -1,12 +1,10 @@
-<div class = "container">
-<div class="row">
-<div class="col-md-4 col-md-offset-4">
-<h1>Listing creatures</h1>
 
-<%= link_to 'New Creature', new_creature_path %>
+<div class="col-md-8 col-md-offset-2">
+<h1>Bog creatures</h1>
+
 <p>
 
-<table>
+<table class="table">
   <tr>
     <th>Name</th>
     <th>Description</th>
@@ -16,17 +14,19 @@
     <tr>
       <td><%= creature.name %></td>
       <td><%= creature.description %></td>
-      <td> <%= link_to 'Show Creature.....', creature %></td>
-      <td><%= link_to 'Destroy......', creature,
+      <td> <%= link_to 'Show Creature', creature, :class=>'btn btn-primary'%></td>
+      <td><%= link_to 'Destroy', creature, :class=>'btn btn-primary',
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
-      <td><%= link_to 'Edit', edit_creature_path(creature) %></td>
+      <td><%= link_to 'Edit', edit_creature_path(creature), :class=>'btn btn-primary' %></td>
     </tr>
     </tr>
   <% end %>
 </table>
 
 </p>
+
+<%= link_to 'Add New Creature', new_creature_path %>
 
 </div>
 </div>
