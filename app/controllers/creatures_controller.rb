@@ -14,7 +14,6 @@ class CreaturesController < ApplicationController
 
   def update
   @creature = Creature.find(params[:id])
-
     @creature.update(creature_params)
       redirect_to @creature
   end
